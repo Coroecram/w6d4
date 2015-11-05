@@ -1,0 +1,50 @@
+html, body, section, article, title,
+h1, h2, p, a, img, ul {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  float: left;
+  height: 200px;
+}
+
+.carousel .items {
+  width: 1200px;
+}
+
+.carousel {
+  height: 200px;
+  width: 300px;
+  border: black solid 3px;
+}
+
+button {
+  margin:50px;
+}
+
+.items li {
+  display: none;
+}
+
+.items .active {
+  display: block;
+}
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
+}
