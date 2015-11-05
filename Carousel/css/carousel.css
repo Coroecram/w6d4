@@ -21,26 +21,46 @@ li {
   height: 200px;
 }
 
-.carousel .items {
-  width: 1200px;
-}
-
-.carousel {
+.items {
+  position: relative;
   height: 200px;
   width: 300px;
   border: black solid 3px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  /*overflow: hidden;*/
 }
 
 button {
-  margin:50px;
+  margin: 23px 50px;
 }
 
-.items li {
+li {
   display: none;
 }
 
-.items .active {
+.active {
+  position: absolute;
+  left: 0px;
+  right: 0%;
   display: block;
+  transition: left 1s;
+  z-index: -1;
+}
+
+.left {
+  position: absolute;
+  left: -100%;
+}
+
+.right {
+  position: absolute;
+  left: 100%;
 }
 
 .group:after {
