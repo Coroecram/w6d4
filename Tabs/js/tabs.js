@@ -1,24 +1,23 @@
 var Tabs = $.Tabs = function (el) {
-  this.$el = $(el),
-  this.$contentTabs = $(this.$el.data('contentTabs')),
-  this.$activeTab = this.$el.find('.active'),
+  this.$el = $(el);
+  this.$contentTabs = $(this.$el.data('contentTabs'));
+  this.$activeTab = this.$el.find('.active');
 
   this.$el.on('click', 'a', this.clickTab.bind(this));
 };
 
 Tabs.prototype.clickTab = function (e) {
-  console.log(e);
   e.preventDefault();
   var aClicked = $(e.currentTarget);
   var articleFocus = this.$el.find($(aClicked.attr('href')));
 
   this.$activeTab.removeClass();
-  this.$activeTab.addClass('transitioning')
+  this.$activeTab.addClass('transitioning');
   articleFocus.addClass('active transitioning');
   aClicked.addClass('active');
 
   this.$activeTab.one("transitionend", function(){
-    window.setTimeout(articleFocus.removeClass('transitioning'), 0);
+    articleFocus.removeClass('transitioning')
     this.$activeTab.removeClass();
     this.$activeTab = this.$el.find('.active');
   }.bind(this));
