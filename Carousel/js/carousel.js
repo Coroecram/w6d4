@@ -5,6 +5,7 @@ var Carousel = window.$.Carousel = window.$.Carousel ||
 function(el){
   this.$el = $(el);
   this.activeIdx = 0;
+  this.transitioning = false;
   this.$el.find('button').on('click', this.slide.bind(this));
   this.$strip = this.$el.find('.items');
   this.$el.find('.items li:first-child').addClass('active');
